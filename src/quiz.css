@@ -302,7 +302,7 @@ justify-content: center;
 
 .sportCreate:hover, .fictionCreate:hover, .historyCreate:hover{
 
-  top:-5px;
+  color:rgba(255,255,255,0.4);
 }
 
 

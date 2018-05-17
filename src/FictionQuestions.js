@@ -11,6 +11,8 @@ class FictionQuestions extends Component {
     super(props);
     this.state = {
       clicked: true,
+      scorePage: false,
+      topPlayers: '',
       writeQuestion: true,
       backToProfile: true,
       backToQuiz: true,
@@ -435,9 +437,59 @@ stopTimer() {
       })
     }
   }
+
+  enterHigscore = (val) => {
+    console.log("hej")
+
+
+    if(val === "showHigscore"){
+      this.stopTimer();
+
+      let highScoreList = [];
+      firebase.database().ref('users/').once("value", snapshot => {
+        highScoreList = [];
+        // let self = this;
+        snapshot.forEach(function(childSnapshot) {
+          // let childKey = childSnapshot.key;
+          let childData = childSnapshot.val();
+          let highScoreUser = {
+            nickname: childData.profile.nickname,
+            ranking: childData.profile.ranking,
+          }
+          highScoreList.push(highScoreUser);
+        })
+        function compare(a, b) {
+          if (a.ranking < b.ranking)
+            return -1;
+          if (a.ranking > b.ranking)
+            return 1;
+          return 0;
+        }
+        highScoreList.sort(compare);
+        highScoreList.reverse();
+        this.setState({topPlayers: highScoreList, scorePage:true});
+
+
+
+      });
+    }else{
+
+      this.setState({scorePage:false})
+      this.startTimer()
+    }
+
+
+  }
+
   render() {
     // const isPlaying = this.state.isPlaying;
     // let sportQuestions = [];
+
+    let topTen = [];
+    for (let i = 0; i < this.state.topPlayers.length; i++) {
+      topTen.push(this.state.topPlayers[i])
+    }
+
     if (!this.state.backToProfile) {
       return (<div>
         <ProfileComponent firebaseKey={this.props.firebaseKey} profile={this.state.profile} nickname={this.state.nickname} />
@@ -487,8 +539,13 @@ stopTimer() {
         </div>
       <div>
         {
-          (this.state.tenQuestions[this.state.currentQuestion] !== undefined)
-            ? <div className="question">
+          (this.state.tenQuestions[this.state.currentQuestion] !== undefined  && this.state.scorePage === false)
+            ?
+            <div>
+            <div className="buttons">
+              <button className="btn" onClick={e => this.enterHigscore("showHigscore")}>Highscore</button>
+            </div>
+              <div className="question">
 
                 <h2>{this.state.tenQuestions[this.state.currentQuestion].Question}</h2>
                 <ul>
@@ -509,12 +566,32 @@ stopTimer() {
                 <div>Time remaining: { this.state.timeLeft}</div>
                 </div>
               </div>
+            </div>
             : <div></div>
+        }
+        {(this.state.scorePage)
+          ?
+          <div>
+
+          <div className="buttons">
+            <button className="btn" onClick={e => this.enterHigscore("profile")}>Continue quiz</button>
+          </div>
+            <div className="container">
+              <h1 className="headerForTopPlayers">Top players</h1>
+            </div>
+            <div className="container">
+              <ol className="topPlayers">
+                {topTen.map(d => <li key={d.nickname}>{d.nickname + " - " + d.ranking + "%"}</li>)}
+              </ol>
+            </div>
+          </div>
+          :
+          <div></div>
         }
         {
           (this.state.currentQuestion === 10)
             ? <div className="answersAll">
-                <h2>You got {this.state.totalCorrectAnswers} correct answers. And {this.state.totalFailedAnswers} wronged ones.</h2>
+                <h2>You got {this.state.totalCorrectAnswers} correct answers. And {this.state.totalFailedAnswers} wrong ones.</h2>
                 <h2>Everything will be updated at your profile</h2>
               </div>
             : <div></div>
