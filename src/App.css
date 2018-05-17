@@ -1,28 +1,338 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
+body {
+
+  background: rgb(173,132,117); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(173,132,117,1) 0%, rgba(73,39,30,1) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(173,132,117,1) 0%,rgba(73,39,30,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(173,132,117,1) 0%,rgba(73,39,30,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad8475', endColorstr='#49271e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}
+
+.question{
+  width: 50%;
+  margin: auto;
+  height: 400px;
+  text-align: center;
+  padding: 0;
+
+}
+
+
+#bgColor{
+  /* background:rgba(233, 255, 170, 0.4); */
+  background: rgba(255,255,255,0.5);
+  color:rgba(0,0,0,0.7);
+}
+
+
+.timeAndCurrentQ{
+  font-size: 1.2em;
+  font-weight: 700;
+  color:rgba(255,255,255,0.5);
+}
+.question ul{
+  padding: 0;
+  list-style: none;
+
+}
+.Row{
+  display: flex;
+  justify-content: center;
+}
+
+.Row li{
+  width: 100%;
+  margin: 4px;
+  padding: 20px 10px;
+  cursor: pointer;
+  background: rgba(0,0,0,0.2);
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 1.2em;
+  font-weight: 900;
+}
+
+
+.Row li:first-child{
+  border-right: 2px solid rgba(255,255,255,0.1);
+}
+
+.Row:first-child{
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+.btnFb {
+  font-size: 3em;
+}
+
+.profileText{
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin:0 auto;
+  position: relative;
+}
+
+.profile h3{
+  padding-top:20px;
+}
+.profile li {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.profile button:first-child{
+  position: relative;
+  top:100px;
+}
+
+.profile ul{
+  color:rgba(255,255,255,0.7)
+}
+
+.profile img {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 0 20px rgba(82, 62, 62, 1);
+  border-radius: 100%;
+  margin-top: 50px;
+}
+
+.profile h3 {
+  margin: 0;
+}
+
+.btnEdit {
+    width: 270px;
+    font-size: 1.2em;
+    text-align: right;
+    cursor: pointer;
+    position: absolute;
+    top:270px;
+    z-index: 1;
+}
+
+.profile li {
+  position: relative;
+  left: -15px;
+  top: -10px;
+}
+
+.ruta {
+  width: 70%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  display: none;
+  -webkit-clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+  clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  display: none;
+  color: rgba(255, 255, 255, 0.7);
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20px;
+  /* border-radius: 30px 0px; */
+  background: rgba(255, 255, 255, 0.5);
+  width: 65%;
+  margin-top: 45px;
+  align-items: center;
+  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  /* box-shadow: 0 0 10px rgba(0,0,0,.7); */
+}
+
+.wrapper div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.wrapper div i:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.info {
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info span {
+  color:rgba(0,0,0,0.5);
+  /* color:rgba(233, 255, 170, 0.4); */
+
+  font-size: 6em;
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+.timequiz{
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+
+
+
+
+.socialamedierLogIn {
+  position: relative;
+  top: 140px;
+  cursor: pointer;
+}
+
+.socialamedierLogIn i {
+  color: rgba(255, 255, 255, 0.4);
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.socialamedierLogIn i:hover {
+  transform: rotate(3deg);
+  color: rgba(255, 255, 255, 0.7);
+
+}
+
+
+
+
+
+.socialamedierLogIn i:last-child {
+  margin-left: 20px;
+}
+
+.btnGoogleLogin {
+  font-size: 3em;
+}
+
 .App {
+  position: relative;
+  top: 150px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#itHasBeenSent {
+    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.btnQuiz {
+    background: white;
+    border:none;
+    color: rgba(0,0,0,0.6);
+    font-size:1.2em;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    border-color: black;
+    cursor: pointer;
 }
 
-.App-title {
-  font-size: 1.5em;
+.btnBack {
+    background: black;
+    border:none;
+    color: white;
+    font-size:1.2em;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 3px;
+    border-color: white;
+    cursor: pointer;
 }
 
-.App-intro {
-  font-size: large;
+.sportQuestion, .fictionQuestion, .historyQuestion h3{
+  width: 100%;
+  text-align: center;
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+
+.stlyeMenu {
+   color: white;
+}
+
+
+@media (max-width:800px){
+
+    .info span{
+      font-size: 3em;
+    }
+
+    .App{
+      top:40px;
+    }
+    .profile img{
+      width:100px;
+      height: 100px;
+    }
+    .btnEdit {
+      top:160px;
+    }
+
+    ul{
+      font-size: 0.8em;
+    }
+
+
+
+}
+
+@media (max-width:1000px){
+  .Row{
+    display: flex;
+    justify-content: center;
+  }
+
+  .Row li{
+
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    margin: 4px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.2);
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 1em;
+    font-weight: 900;
+  }
+
+  .timeAndCurrentQ{
+    font-size: 1em;
+    font-weight: 500;
+    color:rgba(255,255,255,0.5);
+  }
 }

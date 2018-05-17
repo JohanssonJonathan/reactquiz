@@ -1,0 +1,63 @@
+import React, {Component} from 'react';
+
+
+
+class SportQuestions extends Component {
+    constructor(props) {
+        
+        super(props)
+    }
+
+    
+    render() {
+        let sportQuestions = [];
+        
+        let theQuestions = [
+  {
+      question1: "What is 1+1",
+      anwsers: {
+        a:"4",
+        b: "2",
+        c: "11"
+      },
+
+      correctAnwser: "b"
+
+  },
+  {
+      question2: "What is the capital of Sweden",
+      anwsers: {
+        a:"Stockholm",
+        b:"Lerum",
+        c:"Orgrimmar"
+      },
+
+      correctAnwser: "a"
+  }
+]
+        
+        const listQuestions = theQuestions.map((d) => <li key={d.question1}>{d.question2}</li>)
+                                                      
+                                                      
+        
+        return(
+        
+        <div className="sportQuestion">Lets see how much you know about sport!
+            <div className="sportDiv"> { listQuestions }</div>
+            
+            
+            </div>
+            )
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+export default SportQuestions;

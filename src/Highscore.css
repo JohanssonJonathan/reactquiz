@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
+.btn {
+  border: none;
+  background: rgba(255,255,255,0);
+  margin-top: 30px;
+  color: rgba(0,0,0,0.6);
+  font-size:1.2em;
+  position: relative;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+    color:rgba(255,255,255,0.7);
+}
+
+.btn:hover{
+  /* text-decoration: underline; */
+    position: relative;
+    top:-5px;
+    color:rgba(255,255,255,0.7);
+}
+
+.container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.topPlayers {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5)
+}
+
+.topPlayers>li {
+  width: 100%;
+  /* border: 2px solid black; */
+}
+
+.buttons{
+  width: 20%;
+  text-align: center;
+  border-bottom: 3px solid rgba(255,255,255,0.7)
+}
+
+.headerForTopPlayers{
+  text-align: center;
+  color:rgba(255,255,255,0.7);
+  margin-top: -20px;
+}
+
+@media (max-width:900px){
+  .headerForTopPlayers{
+    margin-top:50px;
+  }
+
+}

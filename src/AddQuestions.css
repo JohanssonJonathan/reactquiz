@@ -1,0 +1,157 @@
+.h2Sport {
+  margin-left: 730px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.img {
+  margin-top: -17px;
+}
+
+.h3Head {
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  top: 10px;
+  font-size: 1.9em;
+  /* margin-top: 20px; */
+  /* text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: -20px; */
+}
+
+
+/* .btnQ {
+  display: flex;
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  margin-top: -40px;
+  margin-left: 30px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all .2s ease-in-out
+} */
+
+/* .btnQ:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+  color: white;
+} */
+
+.btnSend {
+  /* display: flex; */
+  border: none;
+  background: rgba(255, 255, 255, 0);
+  /* margin-top: 60px; */
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  /* margin-left: 600px; */
+  /* margin-top: 20px; */
+  align-content: center;
+  /* margin-left: -5px; */
+}
+
+.btnSend button {
+  background: rgba(255, 255, 255, 0);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+  border: none;
+  cursor: pointer;
+}
+
+.btnSend:hover {
+  transform: scale(1.1);
+}
+
+.btnSend:disabled, .btnSend[disabled] {
+  color: black;
+}
+
+.btnSend:enabled, .btnSend[enabled] {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.letter {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 900;
+  position: absolute;
+}
+
+
+
+.h3Question{
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+.theFormDiv{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theFormDiv > div{
+  position: relative;
+  margin: 5px;
+  color: rgba(255, 255, 255, 0.7);
+
+}
+
+.theFormDiv > div:first-child input{
+  width:370px;
+}
+
+.theFormDiv span, .radioButton{
+  position: absolute;
+}
+
+.theFormDiv input{
+  text-align: left;
+  cursor: pointer;
+}
+
+
+.theForm span {
+  top:0;
+  left:0;
+  margin-bottom:5px;
+}
+
+.radioButton{
+  top:0;
+  left:-25px;
+  z-index: 1;
+  background: red;
+  width:20px;
+
+  height: 20px;
+}
+
+.inputClass{
+  position: relative;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+
+
+  .btnSend {
+    margin-left: -5px;
+  }
+  .h3Head {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 1222px) {
+  .btnSend {
+    /* margin-left: 60px; */
+  }
+}
